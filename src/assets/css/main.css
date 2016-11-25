@@ -1,0 +1,80 @@
+body{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #3f474d;
+}
+#app{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 100px;
+}
+.todo-container{
+    display: flex;
+    margin:1em 8px;
+    width:28%;
+}
+.panel{
+    width:100%;
+    border:none !important;
+    border-radius:0 !important;
+    box-shadow: none;
+    background-color: #607D8B;
+}
+.panel-heading{
+    border-bottom:0 !important;
+    padding-top: 25px;
+    padding-bottom:0;
+    padding-left:25px;
+    font-size: 1.12em;
+    font-weight: bold;
+    background-color: #607D8B !important;
+    color: #212121 !important;
+}
+.panel-body{
+    background-color:#607D8B;
+    padding-left: 10px;
+    padding-right:10px;
+}
+.list-group-item{
+    border-radius: 3px;
+    margin:.8em 0;
+    border:1px solid #f5f5f5;
+    box-shadow: 1px 1px 0px rgba(0,0,0,0.05);
+    font-size: 1.1em;
+}
+.completed .list-group-item{
+    opacity: .7;
+}
+.list-group-item:first-child,.list-group-item:last-child{
+    border-radius: 3px;
+}
+.list-group-item:first-child{
+    margin-top: 0;
+}
+.list-group-item:last-child{
+    margin-bottom: 0;
+}
+.list-group-item a{
+    color: #212121;
+}
+.list-group-item a:hover{
+    text-decoration:none;
+}
+.new-todo{
+    cursor: pointer;
+    display: block;
+    padding-left: 5px;
+    padding-bottom:1em;
+    color: #CFD8DC;
+}
+.new-todo:hover{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+button.btn.btn-primary.btn-block{
+    background-color: #FFEB3B;
+    border-color: #FFEB3B;
+}
+button.btn.btn-primary.btn-block:hover{
+    background-color: #FFEB3B;
+}
