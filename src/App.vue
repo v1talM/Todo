@@ -24,7 +24,7 @@ export default {
     }
   },
   mounted() {
-    this.axios.get('http://todos.dev/api/todos',[],{
+    this.axios.get('http://todo-server.sparki.cn/api/todos',[],{
       withCredentials:true
     }).then((response) => {
         this.todos = response.data.todo;

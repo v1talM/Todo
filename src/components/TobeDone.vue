@@ -28,14 +28,14 @@
         },
         methods: {
             deleteTodo(index,id){
-                this.axios.delete('http://todos.dev/api/todo/' + id).then(response => {
+                this.axios.delete('http://todo-server.sparki.cn/api/todo/' + id).then(response => {
                     this.todos.splice(index,1);
                 }).catch(error => {
                     alert('系统出错了,删除失败')
                 });
             },
             todoing(index,id){
-                this.axios.patch('http://todos.dev/api/todo/' + id).then(response => {
+                this.axios.patch('http://todo-server.sparki.cn/api/todo/' + id).then(response => {
 
                     this.todos.splice(index,1);
                     this.$parent.$data.todos.push(response.data);

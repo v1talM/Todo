@@ -34,7 +34,7 @@
                 if(newTodo.title == ''){
                     return false;
                 }
-                this.axios.post('http://todos.dev/api/todos', {
+                this.axios.post('http://todo-server.sparki.cn/api/todos', {
                     title: this.newTodo.title,
                     completed: this.newTodo.completed
                 }).then(response => {
