@@ -10,7 +10,7 @@
                         <button @click="deleteTodo(index)" class="btn btn-danger btn-xs pull-right">删 除</button>
                     </li>
                 </ul>
-                <todo-form :todos="todos"></todo-form>
+                <todo-form :todos="todos" :cid="cid"></todo-form>
             </div>
         </div>
     </div>
@@ -21,6 +21,11 @@
 
     export default{
         props: ["todos"],
+        data() {
+            return {
+                cid:2
+            }
+        },
         methods: {
             deleteTodo(index){
                 this.todos.splice(index,1);

@@ -18,21 +18,20 @@ export default {
   name: 'app',
   data() {
     return {
-      todos: [
-        {id:1,title:'learn Vuelearn Vuelearn Vuelearn Vuelearn Vue',completed:false}
-      ],
-      tobedones: [
-        {id:2,title:'sleep',completed:false}
-      ],
-      todones: [
-        {id:3,title:'eatting',completed:true}
-      ]
+      todos: [],
+      tobedones: [],
+      todones: []
     }
   },
-
+  mounted() {
+    this.axios.get('http://todos.dev/api/todos').then((response) => {
+        this.todos = response.data.todo;
+        this.tobedones = response.data.undo;
+        this.todones = response.data.done;
+    })
+  },
   components: {
     TobeDones,Todos,Todones
   }
 }
 </script>
-

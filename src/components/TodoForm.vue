@@ -22,11 +22,11 @@
 </template>
 <script>
     export default{
-        props: ['todos'],
+        props: ['todos','cid'],
         data(){
             return{
                 showForm: false,
-                newTodo: {id:null,title:'',completed:false}
+                newTodo: {id:null,title:'',completed:this.cid}
             }
         },
         methods: {
@@ -36,7 +36,7 @@
                 }
                 this.todos.push(newTodo);
                 this.showForm = false;
-                this.newTodo = {id:null,title:'',completed:false};
+                this.newTodo = {id:null,title:'',completed:this.cid};
             },
             toggleForm(){
                 this.showForm = !this.showForm;

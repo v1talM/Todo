@@ -11,7 +11,7 @@
                     </li>
                 </ul>
 
-                <todo-form :todos="todos"></todo-form>
+                <todo-form :todos="todos" :cid="cid"></todo-form>
             </div>
         </div>
     </div>
@@ -22,6 +22,11 @@
     export default{
 
         props: ["todos"],
+        data() {
+            return {
+                cid:1
+            }
+        },
         methods: {
             deleteTodo(index){
                 this.todos.splice(index,1);
