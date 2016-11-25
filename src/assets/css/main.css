@@ -78,3 +78,6 @@ button.btn.btn-primary.btn-block{
 button.btn.btn-primary.btn-block:hover{
     background-color: #FFEB3B;
 }
+button.btn.btn-xs{
+    margin-left: 10px;
+}

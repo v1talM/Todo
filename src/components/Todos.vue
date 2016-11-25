@@ -7,7 +7,8 @@
                     <li class="list-group-item"
                         v-for="(todo,index) in todos">
                         <a href="" >{{ todo.title }}</a>
-                        <button @click="deleteTodo(index)" class="btn btn-danger btn-xs pull-right">删 除</button>
+                        <button @click="deleteTodo(index,todo.id)" class="btn btn-danger btn-xs pull-right">删 除</button>
+                        <button @click="todone(index,todo.id)" class="btn btn-success btn-xs pull-right">完 成</button>
                     </li>
                 </ul>
 
@@ -24,15 +25,24 @@
         props: ["todos"],
         data() {
             return {
-                cid:1
+                cid:'1'
             }
         },
         methods: {
-            deleteTodo(index){
-                this.todos.splice(index,1);
+            deleteTodo(index,id){
+              this.axios.delete('http://todos.dev/api/todo/' + id).then(response => {
+                  this.todos.splice(index,1);
+              }).catch(error => {
+                  alert('系统出错了,删除失败')
+              });
             },
-            toggleCompletion(todo){
-                todo.completed = ! todo.completed;
+            todone(index,id){
+              this.axios.patch('http://todos.dev/api/todone/' + id).then(response => {
+                  this.todos.splice(index,1);
+                  this.$parent.$data.todones.push(response.data);
+              }).catch(error => {
+                  alert('系统出错了,切换失败')
+              })
             }
 
         },

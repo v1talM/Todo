@@ -26,7 +26,7 @@
         data(){
             return{
                 showForm: false,
-                newTodo: {id:null,title:'',completed:this.cid}
+                newTodo: {title:'',completed:this.cid}
             }
         },
         methods: {
@@ -34,7 +34,12 @@
                 if(newTodo.title == ''){
                     return false;
                 }
-                this.todos.push(newTodo);
+                this.axios.post('http://todos.dev/api/todos', {
+                    title: this.newTodo.title,
+                    completed: this.newTodo.completed
+                }).then(response => {
+                    this.todos.push(response.data);
+                });
                 this.showForm = false;
                 this.newTodo = {id:null,title:'',completed:this.cid};
             },
