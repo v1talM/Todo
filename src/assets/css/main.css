@@ -9,9 +9,9 @@ body{
     padding-top: 100px;
 }
 .todo-container{
-    display: flex;
     margin:1em 8px;
     width:28%;
+
 }
 .panel{
     width:100%;
@@ -19,6 +19,7 @@ body{
     border-radius:0 !important;
     box-shadow: none;
     background-color: #607D8B;
+    min-height: 400px;
 }
 .panel-heading{
     border-bottom:0 !important;
@@ -62,7 +63,7 @@ body{
 }
 .new-todo{
     cursor: pointer;
-    display: block;
+    display: flex;
     padding-left: 5px;
     padding-bottom:1em;
     color: #CFD8DC;
